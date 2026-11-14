@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:contentDescription="Student photo"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="MUZAKIR BIN MUDZAFAR"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Student ID: 2024550973" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ICT602 - Mobile Technology and Development" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="© 2026 MUZAKIR. All rights reserved." />
+
+            <TextView
+                android:id="@+id/tvLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:autoLink="web"
+                android:padding="8dp"
+                android:text="https://github.com/your-username/your-repo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/notice_bg"
+                android:lineSpacingExtra="4dp"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:text="HOW TO USE THIS APP\n\n1. On the main page, choose the month.\n2. Enter the electricity units used in kWh (1 to 1000).\n3. Move the slider to choose the rebate percentage (0% to 5%).\n4. Tap Calculate to see the total charges and the final cost after rebate.\n5. Tap Save to store the result in the phone's database.\n6. Tap View History to see the saved months and final costs.\n7. Tap any record to see its full details, edit it (Update) or remove it (Delete).\n\nNotes: units must be between 1 and 1000. Tariff: first 200 kWh 21.8 sen, next 100 kWh 33.4 sen, next 300 kWh 51.6 sen, above 600 kWh 54.6 sen." />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
