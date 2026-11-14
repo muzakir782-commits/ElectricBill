@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -17,31 +18,66 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/notice_bg"
-                android:padding="12dp"
-                android:textColor="@color/black"
-                android:text="How to use:\n1. Choose the month\n2. Enter units used (1 - 1000 kWh)\n3. Slide to set the rebate (0% - 5%)\n4. Tap Calculate to see the bill, then Save to store it." />
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_info"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/brand_accent"
+                    android:gravity="center_vertical"
+                    android:text="How to use"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="1. Choose the month\n2. Enter units used (1 - 1000 kWh)\n3. Slide to set the rebate (0% - 5%)\n4. Tap Calculate to see the bill, then Save to store it."
+                    android:textColor="@color/black" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/ic_calendar"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/brand_primary"
+                android:gravity="center_vertical"
                 android:text="Month"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spinnerMonth"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:entries="@array/months" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_outline"
+                android:orientation="vertical"
+                android:padding="4dp">
+
+                <Spinner
+                    android:id="@+id/spinnerMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:entries="@array/months" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_bolt"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/brand_primary"
+                android:gravity="center_vertical"
                 android:text="Electricity used (kWh)"
                 android:textStyle="bold" />
 
@@ -49,6 +85,7 @@
                 android:id="@+id/etUnits"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:minHeight="48dp"
                 android:hint="Enter 1 - 1000"
                 android:inputType="number"
                 android:maxLength="4" />
@@ -58,6 +95,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_offer"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/brand_primary"
+                android:gravity="center_vertical"
                 android:text="Rebate: 0%"
                 android:textStyle="bold" />
 
@@ -74,21 +115,33 @@
                 android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnCalculate"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
                     android:layout_weight="1"
-                    android:text="Calculate" />
+                    android:text="Calculate"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/btn_calculate"
+                    app:icon="@drawable/ic_calculate"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconTint="@color/white" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnSave"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_weight="1"
-                    android:text="Save" />
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/btn_save"
+                    app:icon="@drawable/ic_save"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp"
+                    app:iconTint="@color/white" />
             </LinearLayout>
 
             <LinearLayout
@@ -103,6 +156,10 @@
                     android:id="@+id/tvTotal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_receipt"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/brand_primary_dark"
+                    android:gravity="center_vertical"
                     android:text="Total charges: RM 0.00"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
@@ -111,25 +168,41 @@
                     android:id="@+id/tvFinal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="8dp"
+                    android:drawableStart="@drawable/ic_bolt"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/brand_primary_dark"
+                    android:gravity="center_vertical"
                     android:text="Final cost: RM 0.00"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnHistory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="View History" />
+                android:text="View History"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/btn_history"
+                app:icon="@drawable/ic_history"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="@color/white" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAbout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="About" />
+                android:text="About"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/btn_about"
+                app:icon="@drawable/ic_info"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:iconTint="@color/white" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.electricbill;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 
 import java.util.Locale;
 
@@ -30,6 +33,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setSupportActionBar(findViewById(R.id.toolbar));
+
+        // Bolt symbol next to the title in the top bar
+        Drawable bolt = ContextCompat.getDrawable(this, R.drawable.ic_bolt);
+        if (bolt != null && getSupportActionBar() != null) {
+            bolt = DrawableCompat.wrap(bolt.mutate());
+            DrawableCompat.setTint(bolt, ContextCompat.getColor(this, R.color.brand_accent));
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setLogo(bolt);
+            getSupportActionBar().setDisplayUseLogoEnabled(true);
+        }
 
         dbHelper = new DataHelper(this);
 
@@ -70,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         double finalCost = BillCalculator.applyRebate(total, rebate);
 
         tvTotal.setText(String.format(Locale.US, "Total charges: RM %.2f", total));
-        tvFinal.setText(String.format(Locale.US, "Final cost : RM %.2f", finalCost));
+        tvFinal.setText(String.format(Locale.US, "Final cost: RM %.2f", finalCost));
 
         lastUnits = units;
         lastRebate = rebate;

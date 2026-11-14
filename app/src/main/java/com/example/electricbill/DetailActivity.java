@@ -20,7 +20,7 @@ public class DetailActivity extends AppCompatActivity {
     Spinner spinnerMonth;
     EditText etUnits;
     SeekBar seekRebate;
-    Button btnUpdate, btnDelete, btnBack;
+    Button btnUpdate, btnDelete;
     DataHelper dbHelper;
     int recordId;
     String[] months;
@@ -44,7 +44,6 @@ public class DetailActivity extends AppCompatActivity {
         seekRebate = findViewById(R.id.seekRebate);
         btnUpdate = findViewById(R.id.btnUpdate);
         btnDelete = findViewById(R.id.btnDelete);
-        btnBack = findViewById(R.id.btnBack);
 
         seekRebate.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -59,7 +58,6 @@ public class DetailActivity extends AppCompatActivity {
 
         btnUpdate.setOnClickListener(v -> updateRecord());
         btnDelete.setOnClickListener(v -> confirmDelete());
-        btnBack.setOnClickListener(v -> finish());
     }
 
     private void loadRecord() {

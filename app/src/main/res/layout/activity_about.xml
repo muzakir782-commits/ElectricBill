@@ -29,6 +29,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_person"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/brand_primary"
+                android:gravity="center_vertical"
                 android:text="MUZAKIR BIN MUDZAFAR"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -36,11 +40,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:drawableStart="@drawable/ic_school"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/brand_primary"
+                android:gravity="center_vertical"
                 android:text="Student ID: 2024550973" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:drawableStart="@drawable/ic_school"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/brand_primary"
+                android:gravity="center_vertical"
                 android:text="ICT602 - Mobile Technology and Development" />
 
             <TextView
@@ -55,18 +69,40 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:autoLink="web"
+                android:drawableStart="@drawable/ic_link"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/brand_primary"
+                android:gravity="center_vertical"
                 android:padding="8dp"
-                android:text="https://github.com/your-username/your-repo" />
+                android:text="https://github.com/muzakir782-commits/ElectricBill" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/notice_bg"
-                android:lineSpacingExtra="4dp"
-                android:padding="12dp"
-                android:textColor="@color/black"
-                android:text="HOW TO USE THIS APP\n\n1. On the main page, choose the month.\n2. Enter the electricity units used in kWh (1 to 1000).\n3. Move the slider to choose the rebate percentage (0% to 5%).\n4. Tap Calculate to see the total charges and the final cost after rebate.\n5. Tap Save to store the result in the phone's database.\n6. Tap View History to see the saved months and final costs.\n7. Tap any record to see its full details, edit it (Update) or remove it (Delete).\n\nNotes: units must be between 1 and 1000. Tariff: first 200 kWh 21.8 sen, next 100 kWh 33.4 sen, next 300 kWh 51.6 sen, above 600 kWh 54.6 sen." />
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_info"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/brand_accent"
+                    android:gravity="center_vertical"
+                    android:text="HOW TO USE THIS APP"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="1. On the main page, choose the month.\n2. Enter the electricity units used in kWh (1 to 1000).\n3. Move the slider to choose the rebate percentage (0% to 5%).\n4. Tap Calculate to see the total charges and the final cost after rebate.\n5. Tap Save to store the result in the phone's database.\n6. Tap View History to see the saved months and final costs.\n7. Tap any record to see its full details, edit it (Update) or remove it (Delete).\n\nNotes: units must be between 1 and 1000. Tariff: first 200 kWh 21.8 sen, next 100 kWh 33.4 sen, next 300 kWh 51.6 sen, above 600 kWh 54.6 sen."
+                    android:textColor="@color/black" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

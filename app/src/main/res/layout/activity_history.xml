@@ -17,9 +17,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/notice_bg"
+            android:drawableStart="@drawable/ic_info"
+            android:drawablePadding="8dp"
+            android:drawableTint="@color/brand_accent"
+            android:gravity="center_vertical"
             android:padding="12dp"
-            android:textColor="@color/black"
-            android:text="Tap a record to view its details, edit or delete it." />
+            android:text="Tap a record to view its details, edit or delete it."
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/tvEmpty"
@@ -33,6 +37,7 @@
             android:id="@+id/lvBills"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="1" />
     </LinearLayout>
 </LinearLayout>
